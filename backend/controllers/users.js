@@ -128,6 +128,8 @@ const login = (req, res, next) => {
       res.cookie('jwtForAutorization', token, {
         maxAge: 604800,
         httpOnly: true,
+        secure: NODE_ENV === 'production' ? 'true' : 'false',
+        sameSite: false,
       });
       res.send({ message: 'Вход выполнен успешно!' });
     })

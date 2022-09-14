@@ -1,4 +1,4 @@
-const BASE_URL = 'https://auth.nomoreparties.co';
+const BASE_URL = 'https://nazarov.back.nomorepartiesxyz.ru';
 
 export function registration(inputValueOject) {
   return fetch(BASE_URL + `/signup`, {
@@ -6,7 +6,6 @@ export function registration(inputValueOject) {
     headers: {
       'Content-Type': 'application/json'
     },
-    credentials: 'include',
     body: JSON.stringify(inputValueOject)
   })
     .then(res =>
@@ -24,7 +23,6 @@ export function authorization(inputValueOject) {
     headers: {
       'Content-Type': 'application/json'
     },
-    credentials: 'include',
     body: JSON.stringify(inputValueOject)
   })
     .then(res =>

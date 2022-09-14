@@ -2,7 +2,7 @@ const cors = require('cors');
 
 const options = {
   origin: [
-    'http://localhost:порт',
+    'http://localhost:3000',
     'https://nazarov.front.nomorepartiesxyz.ru',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],

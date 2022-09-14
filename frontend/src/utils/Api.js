@@ -13,7 +13,8 @@ class Api {
 
   setUserInfo() {
     return fetch(this._baseUrl + `/users/me`, {
-      headers: this._headers
+      headers: this._headers,
+      credentials: 'include',
       })
       .then(this._handleResponse)
   }
@@ -30,7 +31,8 @@ class Api {
 
   getInitialCards() {
     return fetch(this._baseUrl + `/cards`, {
-      headers: this._headers
+      headers: this._headers,
+      credentials: 'include',
       })
       .then(this._handleResponse)
   }
@@ -39,6 +41,7 @@ class Api {
     return fetch(this._baseUrl + `/cards`, {
       method: 'POST',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify(data)
     })
     .then(this._handleResponse)
@@ -74,9 +77,9 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-42',
+  baseUrl: 'https://https://nazarov.back.nomorepartiesxyz.ru',
   headers: {
-    authorization: 'ed73c6b7-f907-48aa-a72e-ee4df672ba1b',
+    'Authorization': `Bearer ${token}`,
     'Content-Type': 'application/json'
   }
 });
