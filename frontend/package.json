@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && scp -r ./build naa@84.252.136.214:/home/naa/react-mesto-api-full/frontend/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

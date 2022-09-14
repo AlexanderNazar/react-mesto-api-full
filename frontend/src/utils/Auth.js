@@ -6,6 +6,7 @@ export function registration(inputValueOject) {
     headers: {
       'Content-Type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify(inputValueOject)
   })
     .then(res =>
@@ -23,6 +24,7 @@ export function authorization(inputValueOject) {
     headers: {
       'Content-Type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify(inputValueOject)
   })
     .then(res =>
@@ -40,7 +42,8 @@ export function getContent(token) {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`,
-    }
+    },
+    credentials: 'include',
   })
     .then(res =>
       {if (res.ok) {
