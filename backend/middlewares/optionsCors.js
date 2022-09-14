@@ -1,5 +1,3 @@
-const cors = require('cors');
-
 const options = {
   origin: [
     'http://localhost:3000',
@@ -12,11 +10,6 @@ const options = {
   credentials: true,
 };
 
-const handlerCors = (params) => {
-  cors(params);
-};
-
 module.exports = {
   options,
-  handlerCors,
 };

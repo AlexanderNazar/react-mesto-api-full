@@ -12,7 +12,9 @@ const app = express();
 
 const cookieParser = require('cookie-parser');
 
-const { options, handlerCors } = require('./middlewares/cors');
+const cors = require('cors');
+
+const { options } = require('./middlewares/optionsCors');
 
 const userRouter = require('./routes/users');
 
@@ -32,7 +34,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
 });
 
-app.use('*', handlerCors(options));
+app.use('*', cors(options));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
