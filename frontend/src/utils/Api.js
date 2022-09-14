@@ -79,7 +79,7 @@ class Api {
 const api = new Api({
   baseUrl: 'https://https://nazarov.back.nomorepartiesxyz.ru',
   headers: {
-    'Authorization': `Bearer ${token}`,
+    'Authorization': 1111,
     'Content-Type': 'application/json'
   }
 });
