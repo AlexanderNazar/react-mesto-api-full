@@ -1,0 +1,26 @@
+.elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 767px) {
+  .elements {
+    width: 581px;
+    display: grid;
+    grid-template-columns: repeat(2, 282px);
+    grid-template-rows: repeat(3, 361px);
+    margin: 0 auto;
+    gap: 20px 17px;
+    padding-bottom: 67px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .elements {
+    width: 880px;
+    grid-template-columns: repeat(3, 282px);
+    grid-template-rows: repeat(2, 361px);
+  }
+}

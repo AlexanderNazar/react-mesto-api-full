@@ -1,0 +1,9 @@
+.header__email {
+  margin: 0 0 18px;
+}
+
+@media (min-width: 767px) {
+  .header__email {
+    margin: 0 24px 0 0;
+  }
+}

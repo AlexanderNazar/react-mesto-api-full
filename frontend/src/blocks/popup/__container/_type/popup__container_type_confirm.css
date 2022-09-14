@@ -1,0 +1,9 @@
+.popup__container_type_confirm {
+  min-height: 153px;
+}
+
+@media (min-width: 767px) {
+.popup__container_type_confirm {
+  min-height: 181px;
+}
+}

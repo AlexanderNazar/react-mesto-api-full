@@ -1,0 +1,10 @@
+.content-sign__save-button_invalid {
+  color: #828282;
+  background-color: black;
+  border: solid 1px #828282;
+}
+
+.content-sign__save-button_invalid:hover {
+  cursor: auto;
+  opacity: 1;
+}

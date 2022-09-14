@@ -1,0 +1,12 @@
+.content-sign {
+  min-height: 484px;
+  width: 260px;
+  align-self: center;
+}
+
+@media (min-width: 767px) {
+  .content-sign {
+    min-height: 601px;
+    width: 358px;
+  }
+}

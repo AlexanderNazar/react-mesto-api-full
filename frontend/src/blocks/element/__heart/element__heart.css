@@ -1,0 +1,20 @@
+.element__heart {
+  padding: 0;
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  height: 19px;
+  width: 22px;
+  align-self: center;
+  background-image: url(../../../images/heart.svg);
+}
+
+.element__heart:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.element__heart:active {
+  background-image: url(../../../images/heart-active.svg);
+  opacity: 1;
+}

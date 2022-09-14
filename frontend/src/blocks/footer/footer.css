@@ -1,0 +1,20 @@
+.footer {
+  width: 282px;
+  padding-bottom: 36px;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .footer {
+    width: 581px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .footer {
+    width: 880px;
+  }
+}

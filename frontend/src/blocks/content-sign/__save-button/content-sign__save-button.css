@@ -1,0 +1,29 @@
+.content-sign__save-button {
+  height: 46px;
+  width: 260px;
+  padding: 0;
+  border: none;
+  color: black;
+  background-color: white;
+  margin: 141px auto 0;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  border-radius: 2px;
+  transition: opacity .1s linear;
+}
+
+@media (min-width: 767px) {
+  .content-sign__save-button {
+    width: 358px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 184px auto 0;
+  }
+}
+
+.content-sign__save-button:hover {
+  cursor: pointer;
+  opacity: .85;
+}

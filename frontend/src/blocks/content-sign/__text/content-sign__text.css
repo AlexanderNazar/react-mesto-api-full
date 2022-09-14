@@ -1,0 +1,15 @@
+.content-sign__text {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 20px auto 40px;
+
+}
+
+@media (min-width: 767px) {
+  .content-sign__text {
+    margin: 15px auto 80px;
+  }
+}

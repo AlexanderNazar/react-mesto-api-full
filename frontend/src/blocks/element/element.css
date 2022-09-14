@@ -1,0 +1,23 @@
+.element {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 361px;
+  width: 282px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 767px) {
+  .element {
+    margin: 0;
+  }
+}
+
+.element:last-child {
+  margin-bottom: 0;
+}

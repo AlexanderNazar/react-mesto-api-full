@@ -1,0 +1,25 @@
+.profile {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 0 36px;
+}
+
+@media (min-width: 767px) {
+  .profile {
+    width: 581px;
+    display: grid;
+    grid-template-columns: 120px max-content 1fr 150px;
+    grid-template-rows: 120px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .profile {
+    width: 880px;
+  }
+}

@@ -1,0 +1,11 @@
+.header__exit {
+  color: #A9A9A9;
+  margin: 0;
+  text-decoration: none;
+  transition: opacity .1s linear;
+}
+
+.header__exit:hover {
+  cursor: pointer;
+  opacity: .6;
+}

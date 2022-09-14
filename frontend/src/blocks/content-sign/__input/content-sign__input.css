@@ -1,0 +1,40 @@
+.content-sign__input {
+  color: white;
+  background-color: black;
+  border: 0;
+  box-sizing: border-box;
+  height: 27px;
+  width: 260px;
+  margin: 0 auto 5px;
+  border-bottom: 2px solid #CCC;
+  padding: 0;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media (min-width: 767px) {
+  .content-sign__input {
+    width: 358px;
+  }
+}
+
+.content-sign__input:focus {
+  outline-color: #CCC;
+  border-radius: 1px;
+}
+
+.content-sign__input::placeholder {
+  color: #CCC;
+}
+
+.content-sign__input::-webkit-input-placeholder {
+  color: #CCC;
+}
+
+.content-sign__input::-moz-placeholder {
+  color: #CCC;
+}
+
+.content-sign__input::-ms-input-placeholder {
+  color: #CCC;
+}

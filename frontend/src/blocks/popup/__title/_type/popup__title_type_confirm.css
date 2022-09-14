@@ -1,0 +1,9 @@
+.popup__title_type_confirm {
+  margin: 25px auto 20px;
+}
+
+@media (min-width: 767px) {
+  .popup__title_type_confirm {
+    margin: 34px auto 20px;
+  }
+}

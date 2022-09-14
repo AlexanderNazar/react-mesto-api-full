@@ -1,0 +1,7 @@
+.popup__open-image {
+  object-fit: contain;
+  max-width: 75vw;
+  max-height: 75vh;
+  min-height: 20vh;
+  min-width: 20vw;
+}

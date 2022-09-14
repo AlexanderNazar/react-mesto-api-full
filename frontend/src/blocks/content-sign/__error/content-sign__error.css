@@ -1,0 +1,9 @@
+.content-sign__error {
+  display: block;
+  min-height: 26px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 13px;
+  color: #ac2142;
+  margin: 0;
+}
