@@ -12,6 +12,8 @@ const app = express();
 
 const cookieParser = require('cookie-parser');
 
+const cors = require('./middlewares/cors');
+
 const userRouter = require('./routes/users');
 
 const cardRouter = require('./routes/cards');
@@ -29,6 +31,8 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
 });
+
+app.use(cors);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
