@@ -126,12 +126,11 @@ const login = (req, res, next) => {
         { expiresIn: '7d' },
       );
       res.cookie('jwtForAutorization', token, {
-        domain: 'https://nazarov.front.nomorepartiesxyz.ru',
         maxAge: 604800,
         httpOnly: true,
-        secure: NODE_ENV === 'production' ? 'true' : 'false',
         sameSite: false,
       });
+
       res.send({ message: 'Вход выполнен успешно!' });
     })
     .catch(next);
