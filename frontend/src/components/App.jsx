@@ -38,13 +38,13 @@ function App() {
 
   function getUserInfo() {
     api.setUserInfo()
-    .then(data => {setCurrentUser(data)})
+    .then(res => {setCurrentUser(res.data)})
     .catch(err => console.log(err))
   }
 
   function getInitialCards() {
     api.getInitialCards()
-    .then(cards => setCards([...cards]))
+    .then(cards => setCards([...cards.data]))
     .catch(err => console.log(err))
   }
 
@@ -130,10 +130,9 @@ function App() {
 
   function handleCardLike(card) {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
-
     api.changeLikePosition(card._id, !isLiked)
       .then(newCard => {
-        setCards(state => state.map(c => c._id === card._id ? newCard : c));
+        setCards(state => state.map(c => c._id === card._id ? newCard.data : c));
       })
       .catch(err => console.log(err))
   }
@@ -156,11 +155,14 @@ function App() {
   function handleCloseSign() {
     setIsPressSign(false);
   }
-
+/////////////////////
   function handleLoggedOut() {
-    setIsPressSign(false);
-    setIsLoggedIn(false);
-    localStorage.removeItem('token');
+    auth.loggout()
+      .then(() => {
+        setIsPressSign(false);
+        setIsLoggedIn(false);
+      })
+      .catch(err => console.log(err))
   }
 
   function handleRegistration({ password, email }) {
@@ -174,15 +176,11 @@ function App() {
         setIsAttestationPopup(true);
       })
   }
-
+/////////////////////////////////////////////////////////////////////////////////////////
   function handleAutorisation({ password, email }) {
     auth.authorization({ password, email })
-    .then(data => {
-      if (data.token) {
-        setIsLoggedIn(true);
-        localStorage.setItem('token', data.token);
-        history.push('/');
-      }
+    .then(() => {
+      setIsLoggedIn(true);
     })
     .catch(() => {
       setIsSuccessPopup(false);
@@ -191,19 +189,16 @@ function App() {
   }
 
   function tokenCheck() {
-    const token = localStorage.getItem('token');
-    if (token) {
-      auth.getContent(token)
-        .then(res => {
-          if (res) {
-            setIsLoggedIn(true);
-            setEmail(res.data.email);
-          }
-        })
-        .catch(err => console.log(err))
-    }
+    auth.getContent()
+      .then(res => {
+        if (res) {
+          setIsLoggedIn(true);
+          setEmail(res.data.email);
+        }
+      })
+      .catch(err => console.log(err))
   }
-
+/////////////////////////////////////////////////////////////////////////////////////////
   useEffect(() => {
     tokenCheck();
   }, [isLoggedIn])

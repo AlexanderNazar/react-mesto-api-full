@@ -126,6 +126,7 @@ const login = (req, res, next) => {
         { expiresIn: '7d' },
       );
       res.cookie('jwtForAutorization', token, {
+        domain: 'https://nazarov.front.nomorepartiesxyz.ru',
         maxAge: 604800,
         httpOnly: true,
         secure: NODE_ENV === 'production' ? 'true' : 'false',
@@ -136,6 +137,18 @@ const login = (req, res, next) => {
     .catch(next);
 };
 
+const loggout = (req, res, next) => {
+  try {
+    res.clearCookie('jwtForAutorization');
+  } catch (err) {
+    throw new Error('Невозможно удалить куки');
+  }
+
+  res.send({ message: 'cookie удалены' });
+
+  next();
+};
+
 module.exports = {
-  getUsers, getUserOnId, createUser, updateUser, updateAvatar, login, getMyUser,
+  getUsers, getUserOnId, createUser, updateUser, updateAvatar, login, getMyUser, loggout,
 };

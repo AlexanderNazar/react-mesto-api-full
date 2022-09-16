@@ -77,9 +77,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://https://nazarov.back.nomorepartiesxyz.ru',
+  baseUrl: 'https://nazarov.back.nomorepartiesxyz.ru',
   headers: {
-    'Authorization': 1111,
     'Content-Type': 'application/json'
   }
 });

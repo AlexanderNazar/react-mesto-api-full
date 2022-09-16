@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { withRouter, useHistory } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 function Login({ onAutorisation, validDefault, setValidDefault, offValideDefault }) {
 
@@ -10,7 +10,6 @@ function Login({ onAutorisation, validDefault, setValidDefault, offValideDefault
   const [validTextEmail, setValidTextEmail] = useState('');
   const [validTextPassword, setValidTextPassword] = useState('');
 
-  const history = useHistory();
   const buttonSubmitClassName = !validityForm() ? "content-sign__save-button content-sign__save-button_invalid" : "content-sign__save-button";
 
   function handleChangeEmail(evt) {
