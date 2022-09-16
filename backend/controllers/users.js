@@ -126,7 +126,6 @@ const login = (req, res, next) => {
         { expiresIn: '7d' },
       );
       res.cookie('jwtForAutorization', token, {
-        domain: 'https://nazarov.back.nomorepartiesxyz.ru',
         maxAge: 604800,
         httpOnly: true,
         sameSite: false,
@@ -137,7 +136,7 @@ const login = (req, res, next) => {
     .catch(next);
 };
 
-const loggout = (req, res, next) => {
+const loggout = (req, res) => {
   try {
     res.clearCookie('jwtForAutorization');
   } catch (err) {
@@ -145,8 +144,6 @@ const loggout = (req, res, next) => {
   }
 
   res.send({ message: 'cookie удалены' });
-
-  next();
 };
 
 module.exports = {
