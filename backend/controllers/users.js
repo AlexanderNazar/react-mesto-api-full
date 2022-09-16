@@ -126,7 +126,7 @@ const login = (req, res, next) => {
         { expiresIn: '7d' },
       );
       res.cookie('jwtForAutorization', token, {
-        domain: 'https://nazarov.back.nomorepartiesxyz.ru/',
+        domain: 'https://nazarov.back.nomorepartiesxyz.ru',
         maxAge: 604800,
         httpOnly: true,
         sameSite: false,
