@@ -126,11 +126,11 @@ const login = (req, res, next) => {
         { expiresIn: '7d' },
       );
       res.cookie('jwtForAutorization', token, {
+        secure: NODE_ENV === 'production',
         maxAge: 604800,
         httpOnly: true,
         sameSite: false,
       });
-
       res.send({ message: 'Вход выполнен успешно!' });
     })
     .catch(next);
@@ -140,7 +140,7 @@ const loggout = (req, res) => {
   try {
     res.clearCookie('jwtForAutorization');
   } catch (err) {
-    throw new Error('Невозможно удалить куки');
+    throw new Error('Невозможно удалить cookie');
   }
 
   res.send({ message: 'cookie удалены' });
