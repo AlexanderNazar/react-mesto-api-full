@@ -127,7 +127,7 @@ const login = (req, res, next) => {
       );
       res.cookie('jwtForAutorization', token, {
         secure: NODE_ENV === 'production',
-        maxAge: 6000,
+        maxAge: 60480000,
         httpOnly: true,
         sameSite: false,
       });
