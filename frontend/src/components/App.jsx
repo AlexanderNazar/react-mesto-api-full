@@ -44,13 +44,16 @@ function App() {
 
   function getInitialCards() {
     api.getInitialCards()
-    .then(cards => setCards([...cards.data]))
+    .then(cards => setCards([...cards.data].reverse()))
     .catch(err => console.log(err))
   }
 
   useEffect(() => {
-    getUserInfo();
-    getInitialCards();
+    const cookie = localStorage.getItem('hasCookie');
+    if (cookie) {
+      getUserInfo();
+      getInitialCards();
+    }
   }, [])
 
   function handleEditAvatarPopupOpen() {
@@ -96,7 +99,7 @@ function App() {
     setIsLoading(true);
     api.changeUserInfo({ name, about })
       .then(res => {
-        setCurrentUser(res);
+        setCurrentUser(res.data);
         closeAllPopups();
       })
       .catch(err => console.log(err))
@@ -107,7 +110,7 @@ function App() {
     setIsLoading(true);
     api.updateAvatar({ avatar })
       .then(res => {
-        setCurrentUser(res);
+        setCurrentUser(res.data);
         closeAllPopups();
       })
       .catch(err => console.log(err))
@@ -141,7 +144,8 @@ function App() {
     setIsLoading(true);
     api.addCard({ name, link })
       .then(newCard => {
-        setCards([newCard, ...cards]);
+        setCards([newCard.data, ...cards]);
+        getInitialCards();
         closeAllPopups();
       })
       .catch(err => console.log(err))
@@ -155,12 +159,13 @@ function App() {
   function handleCloseSign() {
     setIsPressSign(false);
   }
-/////////////////////
+
   function handleLoggedOut() {
     auth.loggout()
       .then(() => {
         setIsPressSign(false);
         setIsLoggedIn(false);
+        localStorage.removeItem('hasCookie');
       })
       .catch(err => console.log(err))
   }
@@ -176,11 +181,14 @@ function App() {
         setIsAttestationPopup(true);
       })
   }
-/////////////////////////////////////////////////////////////////////////////////////////
+
   function handleAutorisation({ password, email }) {
     auth.authorization({ password, email })
     .then(() => {
       setIsLoggedIn(true);
+      localStorage.setItem('hasCookie', true);
+      getUserInfo();
+      getInitialCards();
     })
     .catch(() => {
       setIsSuccessPopup(false);
@@ -189,7 +197,9 @@ function App() {
   }
 
   function tokenCheck() {
-    auth.getContent()
+    const cookie = localStorage.getItem('hasCookie');
+    if (cookie) {
+      auth.getContent()
       .then(res => {
         if (res) {
           setIsLoggedIn(true);
@@ -197,8 +207,9 @@ function App() {
         }
       })
       .catch(err => console.log(err))
+    }
   }
-/////////////////////////////////////////////////////////////////////////////////////////
+
   useEffect(() => {
     tokenCheck();
   }, [isLoggedIn])
