@@ -5,6 +5,6 @@
 Настроили и запустили сайт во всемирной паутине.
 
 Для фронтенда и бэкенда я использовал два разных домена.
-[Фронт](https://nazarov.front.nomorepartiesxyz.ru)
-[Бэк](https://nazarov.back.nomorepartiesxyz.ru)
-[Публичный IP-адрес](84.252.136.214)
+* [Фронт](https://nazarov.front.nomorepartiesxyz.ru)
+* [Бэк](https://nazarov.back.nomorepartiesxyz.ru)
+* [Публичный IP-адрес](https://84.252.136.214)
