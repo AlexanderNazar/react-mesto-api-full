@@ -1,2 +1,10 @@
-Фронт - nazarov.front.nomorepartiesxyz.ru;
-Бэк - nazarov.back.nomorepartiesxyz.ru;
+# Настройка и деплой бэкенда
+
+В этом проекте мы разместили весь код сервиса Mesto на сервере.
+
+Настроили и запустили сайт во всемирной паутине.
+
+Для фронтенда и бэкенда я использовал два разных домена.
+[Фронт](https://nazarov.front.nomorepartiesxyz.ru)
+[Бэк](https://nazarov.back.nomorepartiesxyz.ru)
+[Публичный IP-адрес](84.252.136.214)

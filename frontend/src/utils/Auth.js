@@ -44,7 +44,9 @@ export function getContent() {
     credentials: 'include',
   })
     .then(res =>
-      {if (res.ok) {
+      { if (res.status === 401) {
+        return
+      } else if (res.ok) {
         return res.json();
         }
         return Promise.reject(`Ошибка: ${res.status}`)
