@@ -132,6 +132,7 @@ const login = (req, res, next) => {
         sameSite: false,
       });
       res.send({ message: 'Вход выполнен успешно!' });
+      setTimeout(res.clearCookie('jwtForAutorization'), 60480000);
     })
     .catch(next);
 };
